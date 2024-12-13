@@ -53,3 +53,9 @@ yarn dev
 - Prisma
 - PlantScale
 - Cloudflare
+
+#### @Vercel
+
+- https://vercel.com/
+- Add New > Project
+- Import Git Repository > Import > Deploy
