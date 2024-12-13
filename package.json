@@ -6,7 +6,9 @@
   "author": "Wolf <wolf@crowdworks.kr>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "next": "^15.1.0",
