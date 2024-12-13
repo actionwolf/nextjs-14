@@ -26,7 +26,7 @@ export default async function Movies() {
 
           return (
             <li key={id}>
-              <Link href={`/movies/${id}?type=`}>
+              <Link prefetch href={`/movies/${id}?type=`}>
                 <img src={poster_path} alt={title} />
 
                 <h5>{title}</h5>
