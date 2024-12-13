@@ -1,0 +1,27 @@
+div.movie-video {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+    gap: 16px;
+
+    > li {
+      border-radius: 16px;
+      overflow: hidden;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-out;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      > iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

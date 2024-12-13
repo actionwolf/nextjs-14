@@ -1,0 +1,10 @@
+nav.navigation {
+  padding: 20px;
+  box-sizing: border-box;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

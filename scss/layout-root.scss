@@ -1,0 +1,28 @@
+body {
+  > main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: 740px;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+
+    > nav,
+    > section {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    > nav {
+      width: 200px;
+      max-width: 50%;
+    }
+
+    > section {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  }
+}
