@@ -3,15 +3,15 @@ import '../../../scss/movies.scss';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+import { MOVIE_URL } from '../../../constants/url';
+
 export const metadata: Metadata = {
   title: 'Movies',
   description: 'Movies'
 };
 
-export const URL: string =
-  'https://nomad-movies.nomadcoders.workers.dev/movies';
-
-const getMovies = async () => fetch(URL).then(response => response.json());
+const getMovies = async () =>
+  fetch(MOVIE_URL).then(response => response.json());
 
 export default async function Movies() {
   const movies = await getMovies();

@@ -1,9 +1,9 @@
 import '../../../../scss/movie-video.scss';
 
-import { URL } from '../page';
+import { MOVIE_URL } from '../../../../constants/url';
 
 export const getVideosById = (id: string) =>
-  fetch(`${URL}/${id}/videos`).then(response => response.json());
+  fetch(`${MOVIE_URL}/${id}/videos`).then(response => response.json());
 
 export default async function Videos({ id }: { id: string }) {
   const data = await getVideosById(id);

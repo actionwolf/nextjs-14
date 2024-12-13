@@ -1,9 +1,9 @@
 import '../../../../scss/movie-detail.scss';
 
-import { URL } from '../page';
+import { MOVIE_URL } from '../../../../constants/url';
 
 export const getDetailById = (id: string) =>
-  fetch(`${URL}/${id}`).then(response => response.json());
+  fetch(`${MOVIE_URL}/${id}`).then(response => response.json());
 
 export default async function Detail({ id }: { id: string }) {
   const { title, poster_path, overview }: any = await getDetailById(id);

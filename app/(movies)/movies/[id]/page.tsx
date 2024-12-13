@@ -7,12 +7,8 @@ import Detail, { getDetailById } from './detail';
 import Videos, { getVideosById } from './videos';
 
 interface IMovieDetailProps {
-  params: {
-    id: string;
-  };
-  searchParams: {
-    type?: string;
-  };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ type: string }>;
 }
 
 export const generateMetadata = async ({
