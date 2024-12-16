@@ -1,35 +1,44 @@
 'use client';
 
-import '../scss/navigation.scss';
-
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Navigation() {
-  const flag: string = ' 🚩';
-
   const path: string = usePathname();
 
   return (
-    <nav className='navigation'>
-      <ul>
+    <nav className='p-5'>
+      <ul className='flex flex-row gap-4 justify-center md:flex-col md:w-52'>
         <li>
-          <Link href='/'>Home {path === '/' ? flag : ''}</Link>
-        </li>
-
-        <li>
-          <Link href='/movies'>Movies {path.match('/movies') ? flag : ''}</Link>
-        </li>
-
-        <li>
-          <Link href='/policy/privacy'>
-            Privacy {path === '/policy/privacy' ? flag : ''}
+          <Link className={path === '/' ? 'text-orange-400' : ''} href='/'>
+            Home
           </Link>
         </li>
 
         <li>
-          <Link href='/policy/terms'>
-            Terms {path === '/policy/terms' ? flag : ''}
+          <Link
+            className={path.match('/movies') ? 'text-orange-400' : ''}
+            href='/movies'
+          >
+            Movies
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            className={path === '/policy/privacy' ? 'text-orange-400' : ''}
+            href='/policy/privacy'
+          >
+            Privacy
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            className={path === '/policy/terms' ? 'text-orange-400' : ''}
+            href='/policy/terms'
+          >
+            Terms
           </Link>
         </li>
       </ul>

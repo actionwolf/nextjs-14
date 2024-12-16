@@ -1,9 +1,7 @@
-import '../../../scss/movies.scss';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import { MOVIE_URL } from '../../../constants/url';
+import { MOVIE_URL } from '@/constants/url';
 
 export const metadata: Metadata = {
   title: 'Movies',
@@ -18,18 +16,20 @@ export default async function Movies() {
 
   return (
     <div className='page-movies'>
-      <h1>Movies</h1>
+      <h1 className='text-2xl'>Movies</h1>
 
-      <ul>
+      <ul className='mt-5 grid grid-cols-2 gap-4 md:grid-cols-4'>
         {movies.map((movie: any) => {
           const { id, title, poster_path } = movie;
 
           return (
             <li key={id}>
               <Link prefetch href={`/movies/${id}?type=`}>
-                <img src={poster_path} alt={title} />
+                <img className='rounded-lg' src={poster_path} alt={title} />
 
-                <h5>{title}</h5>
+                <h5 className='text-ellipsis overflow-hidden whitespace-nowrap'>
+                  {title}
+                </h5>
               </Link>
             </li>
           );

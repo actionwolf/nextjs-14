@@ -1,9 +1,19 @@
-import '../scss/reset.scss';
-import '../scss/layout-root.scss';
+import '@/css/globals.css';
 
-import { Metadata } from 'next';
+import { Viewport, Metadata } from 'next';
 
-import Navigation from '../components/navigation';
+import Navigation from '@/components/navigation';
+
+export const viewport: Viewport = {
+  themeColor: 'black',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: false,
+  viewportFit: 'auto',
+  colorScheme: 'dark'
+};
 
 export const metadata: Metadata = {
   title: {
@@ -20,11 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>
-        <main>
+      <body className='min-w-80'>
+        <main className='flex flex-col md:flex-row'>
           <Navigation />
 
-          <section>{children}</section>
+          <section className='p-5'>{children}</section>
         </main>
       </body>
     </html>

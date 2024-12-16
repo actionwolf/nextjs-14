@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function Privacy() {
-  return <h1>Privacy</h1>;
+  return <h1 className='text-2xl'>Privacy</h1>;
 }

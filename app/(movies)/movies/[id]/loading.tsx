@@ -1,3 +1,3 @@
 export default function Loading() {
-  return <h3>Wait (@all)</h3>;
+  return <h3 className='text-2xl'>Wait (@all)</h3>;
 }

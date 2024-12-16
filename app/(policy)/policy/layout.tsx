@@ -7,7 +7,7 @@ export default function PolicyLayout({
     <>
       {children}
 
-      <h5>@here is policy</h5>
+      <h5 className='italic'>@here is policy</h5>
     </>
   );
 }

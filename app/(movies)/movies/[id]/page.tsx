@@ -1,5 +1,3 @@
-import '../../../../scss/movie-view.scss';
-
 import { Suspense } from 'react';
 import { Metadata } from 'next';
 
@@ -15,11 +13,28 @@ export const generateMetadata = async ({
   params
 }: IMovieDetailProps): Promise<Metadata> => {
   const { id } = await params;
-  const { title, overview } = await getDetailById(id);
+  const { title, overview, homepage, backdrop_path } = await getDetailById(id);
 
   return {
     title,
-    description: overview
+    description: overview,
+    openGraph: {
+      title,
+      description: overview,
+      url: homepage,
+      /**
+      siteName: 'Example Store',
+      type: 'product',
+      */
+      images: [
+        {
+          url: backdrop_path,
+          width: 1280,
+          height: 720
+        }
+      ],
+      locale: 'en_US'
+    }
   };
 };
 
@@ -35,7 +50,7 @@ export default async function MovieDetail({
   const { 0: detail, 1: videos }: any = await (!!type ? getContent(id) : {});
 
   return (
-    <div className='movie-view'>
+    <div className='flex flex-col gap-5'>
       {!type ? (
         <>
           <Suspense fallback={<h3>Wait (@Detail)</h3>}>
@@ -48,11 +63,15 @@ export default async function MovieDetail({
         </>
       ) : (
         <>
-          <h1>{detail.title} (@Use getContent)</h1>
+          <h1 className='text-2xl'>{detail.title} (@Use getContent)</h1>
+
+          <img
+            className='rounded-lg'
+            src={detail.poster_path}
+            alt={detail.original_title}
+          />
 
           <p>{detail.overview}</p>
-
-          <img src={detail.poster_path} alt={detail.original_title} />
         </>
       )}
     </div>
