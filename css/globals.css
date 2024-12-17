@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  li {
-    @apply bg-orange-300;
+@layer base {
+  a {
+    @apply text-orange-200;
   }
 }
 
-@layer utilities {
-  .text-wolf {
-    font-weight: 900;
+@layer components {
+  .primary-button {
+    @apply flex flex-row gap-2 items-center justify-center px-3 w-full h-10 bg-orange-500 text-white font-medium rounded-md text-center hover:bg-orange-400 transition-colors;
   }
-} */
+}
