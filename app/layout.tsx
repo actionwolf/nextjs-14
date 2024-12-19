@@ -37,7 +37,7 @@ export default function RootLayout({
         <main className='flex flex-col md:flex-row h-screen'>
           <Navigation />
 
-          <section className='w-full p-5'>{children}</section>
+          <section className='w-full h-full p-5'>{children}</section>
         </main>
       </body>
     </html>

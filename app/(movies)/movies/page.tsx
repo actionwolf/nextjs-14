@@ -24,7 +24,11 @@ export default async function Movies() {
 
           return (
             <li key={id}>
-              <Link prefetch href={`/movies/${id}?type=`}>
+              <Link
+                className='opacity-80 hover:opacity-100 transition-opacity'
+                prefetch
+                href={`/movies/${id}?type=`}
+              >
                 <img className='rounded-lg' src={poster_path} alt={title} />
 
                 <h5 className='text-ellipsis overflow-hidden whitespace-nowrap'>

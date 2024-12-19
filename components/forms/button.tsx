@@ -1,27 +1,31 @@
 'use client';
 
+import { forwardRef, ForwardedRef, ButtonHTMLAttributes } from 'react';
 import { useFormStatus } from 'react-dom';
 
 interface IButtonProps {
-  type: 'submit' | 'reset' | 'button';
-  disabled?: boolean;
   children: any;
+  [x: string]: any;
 }
 
-export default function Button({
-  type = 'submit',
-  disabled = false,
-  children
-}: IButtonProps) {
-  const { pending } = useFormStatus();
+export default forwardRef(
+  (
+    {
+      children,
+      ...rest
+    }: IButtonProps & ButtonHTMLAttributes<HTMLButtonElement>,
+    ref: ForwardedRef<HTMLButtonElement>
+  ) => {
+    const { pending } = useFormStatus();
 
-  return (
-    <button
-      className='primary-button'
-      type={type}
-      disabled={disabled || pending}
-    >
-      {children}
-    </button>
-  );
-}
+    return (
+      <button
+        className='primary-button'
+        disabled={rest.disabled || pending}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);

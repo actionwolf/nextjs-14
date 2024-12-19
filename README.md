@@ -5,7 +5,7 @@
 yarn init-y
 
 // react, next, react-dom 생성
-yarn add next react react-dom
+yarn add next@14 react@18 react-dom@18
 ```
 
 ```js
