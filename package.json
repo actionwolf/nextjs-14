@@ -12,11 +12,18 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@prisma/client": "6.1.0",
     "@tailwindcss/forms": "^0.5.9",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.0",
+    "iron-session": "^8.0.4",
     "next": "14",
+    "prisma": "^6.1.0",
     "react": "18",
     "react-dom": "18",
     "sass": "^1.83.0",
+    "string-width": "4.2.3",
+    "strip-ansi": "6.0.1",
     "validator": "^13.12.0",
     "zod": "^3.24.1"
   },
