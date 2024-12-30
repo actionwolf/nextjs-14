@@ -1,6 +1,6 @@
-import { MOVIE_URL } from '@/constants/url';
+import { MOVIE_URL } from '@/lib/constants';
 
-export const getVideosById = (id: string) =>
+export const getVideosById = async (id: string) =>
   fetch(`${MOVIE_URL}/${id}/videos`).then(response => response.json());
 
 export default async function Videos({ id }: { id: string }) {
@@ -14,9 +14,8 @@ export default async function Videos({ id }: { id: string }) {
         {data.map((video: any, index: number) => {
           return (
             index < 4 && (
-              <li className='w-full rounded-lg overflow-hidden'>
+              <li key={video.id} className='w-full rounded-lg overflow-hidden'>
                 <iframe
-                  key={video.id}
                   className='w-full'
                   src={`https://youtube.com/embed/${video.key}`}
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'

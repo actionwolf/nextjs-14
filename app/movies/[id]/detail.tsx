@@ -1,6 +1,6 @@
-import { MOVIE_URL } from '@/constants/url';
+import { MOVIE_URL } from '@/lib/constants';
 
-export const getDetailById = (id: string) =>
+export const getDetailById = async (id: string) =>
   fetch(`${MOVIE_URL}/${id}`).then(response => response.json());
 
 export default async function Detail({ id }: { id: string }) {

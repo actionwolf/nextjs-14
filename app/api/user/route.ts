@@ -1,17 +1,15 @@
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export const GET = async (request: NextRequest) => {
-  return Response.json({
+  return NextResponse.json({
     user: 'wolf?'
   });
 };
 
 export const POST = async (request: NextRequest) => {
-  /** console.log(request.cookies.get('')); */
-
   const data = await request.json();
 
-  return Response.json({
+  return NextResponse.json({
     ...data,
     user: 'wolf upadeted'
   });

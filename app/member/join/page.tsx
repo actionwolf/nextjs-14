@@ -5,19 +5,16 @@ import Link from 'next/link';
 
 import { join } from './actions';
 
-import {
-  RocketLaunchIcon,
-  ChatBubbleOvalLeftEllipsisIcon
-} from '@heroicons/react/24/solid';
+import { RocketLaunchIcon } from '@heroicons/react/24/solid';
 import { Input, Button } from '@/components/forms';
 
 export default function Join() {
   const [state, dispatch] = useFormState(join, null);
 
   return (
-    <div className='flex flex-col gap-4 w-full items-center justify-center'>
+    <div className='flex flex-col gap-10 w-full items-center justify-center'>
       <div className='flex flex-col gap-4 text-center'>
-        <h1 className='py-5 italic text-6xl font-extrabold'>Join (@email)</h1>
+        <h1 className='py-5 italic text-6xl font-extrabold'>Join</h1>
       </div>
 
       <form className='flex flex-col gap-4 w-full' action={dispatch}>
@@ -63,12 +60,8 @@ export default function Join() {
       <div className='w-full h-[1px] bg-neutral-400' />
 
       <div className='w-full flex flex-col gap-4'>
-        <Link className='primary-button' href='/member/login'>
-          Login
-        </Link>
-
-        <Link className='primary-button' href='/member/login'>
-          <span>
+        <Link className='primary-button' href='/api/github/start'>
+          <span className='user-select-none'>
             <svg
               className='size-6'
               viewBox='0 0 15 15'
@@ -84,15 +77,11 @@ export default function Join() {
             </svg>
           </span>
 
-          <span>Sign up with github.com</span>
+          <span>Continue with github.com</span>
         </Link>
 
         <Link className='primary-button' href='/member/login'>
-          <span>
-            <ChatBubbleOvalLeftEllipsisIcon className='w-6 h-6' />
-          </span>
-
-          <span>Sign up with SMS</span>
+          Login
         </Link>
       </div>
     </div>

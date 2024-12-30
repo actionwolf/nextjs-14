@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import { MOVIE_URL } from '@/constants/url';
+import { MOVIE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Movies',
